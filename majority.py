@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 
 CITY_POPULATION = 100
+NUMBER_OF_EXPERIMENTS = 10
 
 def init_city(city_proper_precentage):
     city = [1 for i in range(math.floor(CITY_POPULATION * (city_proper_precentage / 100)))]  
@@ -25,10 +26,9 @@ def experiment(city_proper_precentage):
     return get_property_precentage(random_group)
 
 def main():
-
     results = []
     for city_proper_precentage in range(51, 101):
-        for i in range(10):
+        for i in range(NUMBER_OF_EXPERIMENTS):
             results.append((experiment(city_proper_precentage), city_proper_precentage))
 
     x, y = zip(*results)
